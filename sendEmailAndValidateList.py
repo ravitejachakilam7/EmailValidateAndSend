@@ -16,7 +16,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 
 # Path to your resume
-RESUME_PATH = r"D:\Resumes\DotNet\Sr .Net Full Stack Developer Raviteja.pdf"
+RESUME_PATH = r"" # add resume path 
 
 def sanitize_email(email):
     """Remove any period at the end of the email address."""
@@ -99,7 +99,7 @@ def send_email(to_email, subject, body):
 
 def main():
     # Read the Excel file containing email IDs
-    file_path = r"D:\pythonScript\emailList.xlsx"  # Path to your Excel file
+    file_path = r""  # Path to your Excel file
     df = pd.read_excel(file_path)  # Read the file
 
     # Check if 'Email' column exists
@@ -111,13 +111,13 @@ def main():
     email_list = df['Email'].tolist()
 
     # Email subject and body
-    subject = "In Search of .NET Development Roles - Let’s Connect!"
+    subject = ""
     body = """\
     Hi,
     
     I hope this message finds you well.
 
-    I am reaching out to share my resume and express my interest in potential job opportunities with your organization. With over 10 years of experience as a .NET Developer, 
+    I am reaching out to share my resume and express my interest in potential job opportunities with your organization. 
     
     I have honed my skills in designing, developing, and deploying software solutions that drive business success. I believe my experience, combined with my passion for technology, makes me an ideal candidate to contribute to your team's success.
 
@@ -126,10 +126,6 @@ def main():
     Thank you for considering my application. I look forward to hearing from you soon.
 
     Thanks & Regards,
-
-    Raviteja,
-    Sr..Net FullStack Developer,
-    Ph No: +1(913)666-8990.
     """
 
     # Initialize counter for email sending
